@@ -105,7 +105,49 @@ void move_left()
     }
 }
 
+void move_right()
+{
+    // remember the origin here. its from the top left
+    if(position[0] > 0)
+    {
+        strcpy(grid[position[0]][position[1]], empty);
+        // step by step to the right
+        position[0] +=1;
 
+        strcpy(grid[position[0]][position[1]], pos);
+    }
+    else {
+        printf("cannot move to the right anymore");
+    }
+}
+
+
+void move_up()
+{
+    // remember that the origin starts from the top left
+    if(position[0] < 0 || position[1] < size - 1)
+    {
+        strcpy(grid[position[0]][position[1]], empty);
+
+        // step by step upwards -> increment by 1 here
+        position[0] -= 1;
+        position[1] -= 1;
+
+        strcpy(grid[position[0]][position[1]], pos);
+    }
+    else {
+        printf("cannt move upwards anymore");
+    }
+}
+
+void move_down()
+{
+    // remember the place of the origin -> top left
+    if (position[0])
+    {
+        return 0;
+    }
+}
 
 
 
